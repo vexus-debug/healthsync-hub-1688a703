@@ -21,6 +21,7 @@ import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
+import { Route as DashboardAccountingRouteImport } from './routes/dashboard.accounting'
 import { Route as DashboardCompletedRouteImport } from './routes/dashboard.completed'
 import { Route as DashboardManageTestsRouteImport } from './routes/dashboard.manage-tests'
 import { Route as DashboardPendingRouteImport } from './routes/dashboard.pending'
@@ -100,6 +101,11 @@ const ShopRoute = ShopRouteImport.update({
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardAccountingRoute = DashboardAccountingRouteImport.update({
+  id: '/dashboard/accounting',
+  path: '/dashboard/accounting',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardCompletedRoute = DashboardCompletedRouteImport.update({
@@ -217,6 +223,7 @@ export interface FileRoutesByFullPath {
   '/results': typeof ResultsRoute
   '/services': typeof ServicesRoute
   '/shop': typeof ShopRoute
+  '/dashboard/accounting': typeof DashboardAccountingRoute
   '/dashboard/completed': typeof DashboardCompletedRoute
   '/dashboard/manage-tests': typeof DashboardManageTestsRoute
   '/dashboard/pending': typeof DashboardPendingRoute
@@ -251,6 +258,7 @@ export interface FileRoutesByTo {
   '/results': typeof ResultsRoute
   '/services': typeof ServicesRoute
   '/shop': typeof ShopRoute
+  '/dashboard/accounting': typeof DashboardAccountingRoute
   '/dashboard/completed': typeof DashboardCompletedRoute
   '/dashboard/manage-tests': typeof DashboardManageTestsRoute
   '/dashboard/pending': typeof DashboardPendingRoute
@@ -286,6 +294,7 @@ export interface FileRoutesById {
   '/results': typeof ResultsRoute
   '/services': typeof ServicesRoute
   '/shop': typeof ShopRoute
+  '/dashboard/accounting': typeof DashboardAccountingRoute
   '/dashboard/completed': typeof DashboardCompletedRoute
   '/dashboard/manage-tests': typeof DashboardManageTestsRoute
   '/dashboard/pending': typeof DashboardPendingRoute
@@ -322,6 +331,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/services'
     | '/shop'
+    | '/dashboard/accounting'
     | '/dashboard/completed'
     | '/dashboard/manage-tests'
     | '/dashboard/pending'
@@ -356,6 +366,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/services'
     | '/shop'
+    | '/dashboard/accounting'
     | '/dashboard/completed'
     | '/dashboard/manage-tests'
     | '/dashboard/pending'
@@ -390,6 +401,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/services'
     | '/shop'
+    | '/dashboard/accounting'
     | '/dashboard/completed'
     | '/dashboard/manage-tests'
     | '/dashboard/pending'
@@ -425,6 +437,7 @@ export interface RootRouteChildren {
   ResultsRoute: typeof ResultsRoute
   ServicesRoute: typeof ServicesRoute
   ShopRoute: typeof ShopRoute
+  DashboardAccountingRoute: typeof DashboardAccountingRoute
   DashboardCompletedRoute: typeof DashboardCompletedRoute
   DashboardManageTestsRoute: typeof DashboardManageTestsRoute
   DashboardPendingRoute: typeof DashboardPendingRoute
@@ -532,6 +545,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/accounting': {
+      id: '/dashboard/accounting'
+      path: '/dashboard/accounting'
+      fullPath: '/dashboard/accounting'
+      preLoaderRoute: typeof DashboardAccountingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard/completed': {
@@ -689,6 +709,7 @@ const rootRouteChildren: RootRouteChildren = {
   ResultsRoute: ResultsRoute,
   ServicesRoute: ServicesRoute,
   ShopRoute: ShopRoute,
+  DashboardAccountingRoute: DashboardAccountingRoute,
   DashboardCompletedRoute: DashboardCompletedRoute,
   DashboardManageTestsRoute: DashboardManageTestsRoute,
   DashboardPendingRoute: DashboardPendingRoute,
