@@ -1,0 +1,104 @@
+{
+  "source": "github",
+  "repository": "https://github.com/vexus-debug/healthsync-hub-5918df57.git",
+  "capabilities": [
+    {
+      "capability": "code",
+      "source": "GitHub repository",
+      "outcome": "Repository files copied into the current project; .git, local Lovable project metadata, installed dependencies, and .env were not copied.",
+      "status": "imported",
+      "next_action": "None for repository import"
+    },
+    {
+      "capability": "schema",
+      "source": "Supabase migration files",
+      "outcome": "Migration files copied unchanged; no database migration was applied.",
+      "status": "imported_not_applied",
+      "next_action": "Apply only if requested"
+    },
+    {
+      "capability": "records",
+      "source": "No record export in repository",
+      "outcome": "Existing records were not imported.",
+      "status": "pending",
+      "next_action": "Provide sanitized CSV or JSON exports if data migration is requested"
+    },
+    {
+      "capability": "auth_identities",
+      "source": "No user export in repository",
+      "outcome": "Existing identities were not imported.",
+      "status": "pending",
+      "next_action": "Provide user export if account migration is requested"
+    },
+    {
+      "capability": "authorization",
+      "source": "Repository code and migrations",
+      "outcome": "Imported unchanged and not verified, per request.",
+      "status": "not_verified",
+      "next_action": "None for repository import"
+    },
+    {
+      "capability": "uploaded_file_bytes",
+      "source": "No storage export in repository",
+      "outcome": "Existing uploaded file bytes were not imported.",
+      "status": "pending",
+      "next_action": "Provide storage export if file migration is requested"
+    },
+    {
+      "capability": "external_providers",
+      "source": "Supabase dependencies and project files",
+      "outcome": "Provider code and configuration files copied; no external service migration was performed.",
+      "status": "imported_not_configured",
+      "next_action": "Configure required environment values through the project settings if needed"
+    },
+    {
+      "capability": "public_endpoints",
+      "source": "Repository code",
+      "outcome": "Copied unchanged and not verified, per request.",
+      "status": "not_verified",
+      "next_action": "None for repository import"
+    },
+    {
+      "capability": "callbacks",
+      "source": "Repository code",
+      "outcome": "Copied unchanged and not verified, per request.",
+      "status": "not_verified",
+      "next_action": "None for repository import"
+    },
+    {
+      "capability": "webhooks",
+      "source": "Repository code",
+      "outcome": "Copied unchanged and not verified, per request.",
+      "status": "not_verified",
+      "next_action": "None for repository import"
+    },
+    {
+      "capability": "schedules",
+      "source": "Repository code",
+      "outcome": "Copied unchanged and not verified, per request.",
+      "status": "not_verified",
+      "next_action": "None for repository import"
+    },
+    {
+      "capability": "secrets",
+      "source": "Repository .env",
+      "outcome": "The .env file was excluded to keep credentials out of the project files.",
+      "status": "pending",
+      "next_action": "Set required environment values securely if needed"
+    },
+    {
+      "capability": "cutover",
+      "source": "Repository import",
+      "outcome": "No production cutover was requested or performed.",
+      "status": "not_applicable",
+      "next_action": "None"
+    },
+    {
+      "capability": "verification",
+      "source": "User request",
+      "outcome": "No tests or checks were run.",
+      "status": "not_run_by_request",
+      "next_action": "None"
+    }
+  ]
+}
